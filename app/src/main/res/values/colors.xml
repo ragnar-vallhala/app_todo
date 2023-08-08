@@ -3,6 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background">#E4FEF6</color>
+    <color name="text_background">#92CFBC</color>
     <color name="panes">#04B17A</color>
     <color name="dark_pane">#01422E</color>
+    <color name="hint">#888282</color>
 </resources>

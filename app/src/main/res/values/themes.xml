@@ -9,5 +9,9 @@
     <style name="main_theme" parent="Base.Theme.Todo">
         <item name="colorPrimaryDark">@color/panes</item>
         <item name="backgroundColor">@color/dark_pane</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="spinner">
+        <item name="android:textColor">@color/black</item>
     </style>
 </resources>

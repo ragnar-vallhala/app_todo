@@ -70,7 +70,7 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/task_name"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:ems="10"
@@ -117,27 +117,19 @@
             android:orientation="horizontal">
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/priority"
                 android:layout_width="200dp"
-                android:layout_height="50dp" />
+                android:layout_height="50dp"
+                android:popupBackground="@color/white"
+                />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/baseline_post_add_24"
-                android:backgroundTint="#F6F3F3"
-                android:contentDescription="@string/add_button"
-                android:paddingBottom="10dp"
-                tools:ignore="TouchTargetSizeCheck" />
 
         </LinearLayout>
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/add_button"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"

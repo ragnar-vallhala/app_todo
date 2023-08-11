@@ -1,13 +1,20 @@
 Shared Pref Data
-    str_identify data
+    str_identify "data"
     Shared Pref Tasks
-        str_identify task
+        str_identify "task"
           Class Task
             String Name
-            str_identify name
+            str_identify "name"
             Date date
-            str_identify date
+            str_identify "date"
             Int Priority
-            str_identify priority
+            str_identify "priority"
             Boolean Completion_Status
-            str_identify status
+            str_identify "status"
+
+
+ TAsk
+    _name
+    _date
+    _priority
+    _status

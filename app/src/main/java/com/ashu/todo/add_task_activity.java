@@ -87,7 +87,7 @@ public class add_task_activity extends AppCompatActivity {
                     return;
                 }
 
-                hash+=temp_task_name+"*$*";
+                hash+=(temp_task_name+"*$*");
 
 
                 temp_task_name = date_text.getText().toString();
@@ -103,8 +103,10 @@ public class add_task_activity extends AppCompatActivity {
 
                 hash = spinnerOut(hash);
 
+                hash+="0"+"*$*";
+
                 ArrayList<String> lst = utility.hash2str(hash);
-                for(int i=0;i<3;i++){
+                for(int i=0;i<4;i++){
                     Log.d("Log",lst.get(i));
                 }
 

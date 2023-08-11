@@ -10,6 +10,16 @@ package com.ashu.todo;
  *
  *
  *
+ *
+ * Following Methods are contained in the class
+ *
+ * Constructor
+ * public task(String _name, String _date, String _priority, Boolean _finished)
+ *
+ *
+ * Getters and Setters for every field
+ *
+ *
  * */
 public class task {
     private String _name=null;
@@ -44,7 +54,7 @@ public class task {
     @Override
     public String toString() {
         return
-                _name + '\'' + _date + '\'' + _priority +'\''+ _status ;
+                _name + "*$*" + _date + "*$*" + _priority +"*$*"+ _status ;
 
     }
 

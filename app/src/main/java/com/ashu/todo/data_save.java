@@ -16,6 +16,16 @@ public class data_save {
 
     }
 
+
+    public static void clear_pref(Context context, String pref_name){
+
+        SharedPreferences sharedPreferences = context.getSharedPreferences(pref_name,Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+
+    }
+
     public static String get_pref(Context context,String pref_name, String key) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(pref_name, Context.MODE_PRIVATE);
         return sharedPreferences.getString(key, null);

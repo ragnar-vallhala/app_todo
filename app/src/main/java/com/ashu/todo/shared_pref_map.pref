@@ -1,3 +1,6 @@
+
+
+-----total structure-----
 Shared Pref Data
     str_identify "data"
     Shared Pref Tasks
@@ -12,9 +15,20 @@ Shared Pref Data
             Boolean Completion_Status
             str_identify "status"
 
-
- TAsk
+-----Class structure-----
+ Task
     _name
     _date
     _priority
     _status
+
+
+
+
+------Save list------
+
+Pref Name  _pref_task_list_
+    List of name of tasks with name as key
+
+
+

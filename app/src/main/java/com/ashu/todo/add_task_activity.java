@@ -1,8 +1,11 @@
 package com.ashu.todo;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -10,6 +13,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import android.widget.Toast;
@@ -24,6 +28,8 @@ import java.util.Locale;
 
 public class add_task_activity extends AppCompatActivity {
 
+
+
     ImageView main_back;
 
     Calendar calendar = Calendar.getInstance();
@@ -35,6 +41,7 @@ public class add_task_activity extends AppCompatActivity {
     EditText task_name;
 
     Spinner priority;
+    ArrayList<task> taskArrayList;
 
 
 
@@ -46,7 +53,6 @@ public class add_task_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
-
 
 
         main_back = findViewById(R.id.back_button);
@@ -105,16 +111,33 @@ public class add_task_activity extends AppCompatActivity {
 
                 hash+="0"+"*$*";
 
-                ArrayList<String> lst = utility.hash2str(hash);
-                for(int i=0;i<4;i++){
-                    Log.d("Log",lst.get(i));
-                }
+                task new_task = new task(utility.hash2str(hash));
 
-                Toast.makeText(add_task_activity.this, hash, Toast.LENGTH_SHORT).show();
+
+                /**@Used_Code
+                 *
+                 * data_save.save_pref(add_task_activity.this,_pref_main_name,task_name.getText().toString(),hash);
+
+                data_save.save_pref(add_task_activity.this,
+                        _pref_main_name,
+                        task._pref_name,
+                        task_name.getText().toString()+"*$*"+data_save.get_pref(add_task_activity.this,_pref_main_name,task._pref_name));
+
+                */
+                Intent main_intent = new Intent(add_task_activity.this,MainActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("new_task", new_task);
+                main_intent.putExtra("pass",bundle);
+                Toast.makeText(add_task_activity.this, "Added", Toast.LENGTH_SHORT).show();
+                startActivity(main_intent);
+
 
 
             }
         });
+
+
+
 
         ArrayAdapter<String> priority_adapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,Priority);
         priority.setAdapter(priority_adapter);
@@ -125,7 +148,12 @@ public class add_task_activity extends AppCompatActivity {
 
 
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
 
+        //TODO implement additional logic for ending of form page
+    }
 
 
 
@@ -154,8 +182,16 @@ public class add_task_activity extends AppCompatActivity {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy", Locale.getDefault());
             date_text.setText(sdf.format(calendar.getTime()));
 
-//            Log.d("Log",Boolean.toString((calendar.getTime().before(Calendar.getInstance().getTime()))));
-//            Toast.makeText(add_task_activity.this, sdf.format(calendar.getTime()), Toast.LENGTH_SHORT).show();
+
+
+
+
+            /**
+             * Log.d("Log",Boolean.toString((calendar.getTime().before(Calendar.getInstance().getTime()))));
+             * Toast.makeText(add_task_activity.this, sdf.format(calendar.getTime()), Toast.LENGTH_SHORT).show();
+             *
+             * */
+
         }
     };
 }

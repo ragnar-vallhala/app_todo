@@ -30,7 +30,6 @@ import java.util.ArrayList;
  * */
 public class task implements Parcelable {
 
-    static  final String _pref_name = "_TASK_";
     private String _name=null;
     private String _date = null;
     private String _priority;

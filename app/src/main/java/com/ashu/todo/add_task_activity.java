@@ -1,24 +1,23 @@
 package com.ashu.todo;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
+
 import android.content.Intent;
-import android.content.SharedPreferences;
+
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.util.Log;
+
+
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+
 import android.widget.Spinner;
 
 import android.widget.Toast;
-import com.ashu.todo.task;
-import com.ashu.todo.utility;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
@@ -179,18 +178,9 @@ public class add_task_activity extends AppCompatActivity {
         @Override
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
             calendar.set(year,month,dayOfMonth);
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy", Locale.getDefault());
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
             date_text.setText(sdf.format(calendar.getTime()));
 
-
-
-
-
-            /**
-             * Log.d("Log",Boolean.toString((calendar.getTime().before(Calendar.getInstance().getTime()))));
-             * Toast.makeText(add_task_activity.this, sdf.format(calendar.getTime()), Toast.LENGTH_SHORT).show();
-             *
-             * */
 
         }
     };

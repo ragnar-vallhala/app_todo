@@ -1,5 +1,7 @@
 package com.ashu.todo;
 
+import android.content.Context;
+import android.util.DisplayMetrics;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -34,7 +36,13 @@ public class utility {
      *
      * */
 
-    static  final String _task_name = "_TASK_NAMES";
+    static  final String _task_name_list_key = "_TASK_NAMES_LIST";
+
+
+
+
+
+    static final  String _log = "test_log";
 
     static ArrayList<String> hash2str(String hash){
 
@@ -62,6 +70,13 @@ public class utility {
         for(int i=0;i<lst.size();i++){
             Log.d(tag,lst.get(i));
         }
+    }
+
+
+
+    public static int dpToPx(Context context, int dp) {
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        return Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
     }
 
 }

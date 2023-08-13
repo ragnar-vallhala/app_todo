@@ -38,5 +38,14 @@ public class data_save {
         return allEntries;
     }
 
+    public static void remove_key(Context context, String pref_name, String key){
+        SharedPreferences sharedPreferences = context.getSharedPreferences(pref_name, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove(key);
+        editor.apply();
+
+    }
+
+
 
 }

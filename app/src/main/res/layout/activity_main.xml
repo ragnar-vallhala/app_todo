@@ -89,11 +89,13 @@
             android:layout_weight="1"
             app:srcCompat="@drawable/baseline_arrow_right_24"
             android:visibility="invisible"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
             android:text="@string/ashu"
-            android:textSize="7dp"/>
+            android:textSize="7dp" />
 
     </LinearLayout>
 
